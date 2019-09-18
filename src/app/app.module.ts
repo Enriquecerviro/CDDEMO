@@ -3,6 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ClarityModule } from '@clr/angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+/**
+ * IMPORTAMOS MODULO UI QUE ES DONDE VAMOS A DELEGAR EL UI
+ * O VISTA PRINCIPAL QUE NO SE VA A MOVER
+ */
+import { UiModule } from './ui/ui.module';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -10,7 +18,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ClarityModule,
+    BrowserAnimationsModule,
+    UiModule
   ],
   providers: [],
   bootstrap: [AppComponent]
