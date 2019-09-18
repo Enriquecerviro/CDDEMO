@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+//TODO: FALLA EL DROPDOWN
 @Component({
   selector: 'app-header',
   template: `
@@ -24,17 +25,20 @@ import { Component, OnInit } from '@angular/core';
             </label>
           </form>
           <div class="header-actions">
-            <clr-dropdown class="dropdown bottom-right">
-              <button class="nav-icon" clrDropdownToggle>
-                <clr-icon shape="user"></clr-icon>
-                <clr-icon shape="caret down"></clr-icon>
-              </button>
-              <div class="dropdown-menu">
-                <a clrDropdownItem>About</a>
-                <a clrDropdownItem>Preferences</a>
-                <a clrDropdownItem>Log out</a>
-              </div>
-            </clr-dropdown>
+          <clr-dropdown [clrCloseMenuOnItemClick]="false">
+            <button clrDropdownTrigger aria-label="Dropdown demo button">
+              <clr-icon shape="error" class="is-error" size="24"></clr-icon>
+              <clr-icon shape="caret down"></clr-icon>
+            </button>
+            <clr-dropdown-menu *clrIfOpen>
+                <label class="dropdown-header" aria-hidden="true">Dropdown header</label>
+                <div aria-label="Dropdown header Action 1" clrDropdownItem>Action 1</div>
+                <div aria-label="Dropdown header Action 2"  clrDropdownItem>Action 2</div>
+                <div clrDropdownItem>Link 1</div>
+                <div clrDropdownItem>Link 2</div>
+                <div class="dropdown-divider" role="separator" aria-hidden="true"></div>
+            </clr-dropdown-menu>
+          </clr-dropdown>
           </div>
         </header>
         <nav class="subnav">
