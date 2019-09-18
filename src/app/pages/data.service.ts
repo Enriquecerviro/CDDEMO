@@ -21,6 +21,9 @@ export interface Todo {
   title: string;
   completed: boolean;
 }
+//VAMOS A DEFINIR LA URL DE LA API(USAMOS UNA FAKE APP PARA YUMMI DATA)
+const baseUrl = 'https://jsonplaceholder.typicode.com';
+
 @Injectable({
   providedIn: 'root'
 })
